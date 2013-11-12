@@ -20,6 +20,7 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpFoundation\Session\Flash\AutoExpireFlashBag;
 use Symfony\Component\HttpKernel\Exception\HttpException;
 use Symfony\Component\HttpKernel\Kernel;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Cache;
 
 /**
  * Controller class.
@@ -66,6 +67,7 @@ class Controller
 
     /**
      * indexAction action.
+     * @Cache(maxage="86400", public="true")
      */
     public function indexAction(Request $request, $_format)
     {
